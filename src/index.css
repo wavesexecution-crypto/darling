@@ -20,18 +20,32 @@ body::before {
   z-index: -1;
 }
 
-/* Mobile: rotate the script vertically so it flows behind the lighter composition */
+/* Mobile: use the mobile-specific background image */
 @media (max-width: 768px) {
   body::before {
-    width: 100vh;
-    height: 100vw;
-    top: 50%;
-    left: 50%;
-    inset: auto;
-    transform: translate(-50%, -50%) rotate(90deg);
-    background-size: contain;
+    background-image: url("/assets/bg/mobile.jpg");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    inset: 0;
+  }
+}
+
+/* Mobile: only the middle lighter displayed, centered */
+@media (max-width: 768px) {
+  .hero-container video:nth-child(1),
+  .hero-container video:nth-child(3) {
+    display: none !important;
+  }
+  .hero-container video:nth-child(2) {
+    left: 35% !important;
+    top: 50% !important;
+    width: 75% !important;
   }
 }
 

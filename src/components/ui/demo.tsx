@@ -6,7 +6,7 @@ const VIDEOS = [
 
 export default function TiltedGridHeroDemo() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden hero-container">
       {VIDEOS.map((v, i) => (
         <video
           key={i}
@@ -16,7 +16,8 @@ export default function TiltedGridHeroDemo() {
           muted
           playsInline
           preload="auto"
-          className="absolute object-contain"
+          className="absolute object-contain hero-video"
+          data-index={i}
           style={{
             left: `${v.x}%`,
             top: "50%",
