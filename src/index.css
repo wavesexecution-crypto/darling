@@ -5,62 +5,40 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   background-color: #000;
   color: #fff;
+  overflow: hidden;
+}
+
+/* Darling background - desktop (static, no flicker) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background-image: url("/assets/bg/b.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  z-index: -1;
 }
 
-/* Darling illuminated-sign flicker overlay */
+/* Mobile: rotate the script vertically so it flows behind the lighter composition */
+@media (max-width: 768px) {
+  body::before {
+    width: 100vh;
+    height: 100vw;
+    top: 50%;
+    left: 50%;
+    inset: auto;
+    transform: translate(-50%, -50%) rotate(90deg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 /* GPU-accelerated rendering for rotating videos */
 video {
   transform: translate3d(0, 0, 0);
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 55% 35% at 50% 50%,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.06) 40%,
-    transparent 70%
-  );
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 1;
-  animation: darling-flicker 6.7s ease-in-out infinite;
-}
-
-@keyframes darling-flicker {
-  0%   { opacity: 0.85; filter: brightness(1.0); }
-  3%   { opacity: 0.72; filter: brightness(0.92); }
-  5%   { opacity: 0.90; filter: brightness(1.05); }
-  8%   { opacity: 0.80; filter: brightness(0.95); }
-  12%  { opacity: 0.88; filter: brightness(1.02); }
-  15%  { opacity: 0.75; filter: brightness(0.88); }
-  18%  { opacity: 0.92; filter: brightness(1.08); }
-  22%  { opacity: 0.82; filter: brightness(0.96); }
-  28%  { opacity: 0.86; filter: brightness(1.0); }
-  33%  { opacity: 0.70; filter: brightness(0.85); }
-  35%  { opacity: 0.95; filter: brightness(1.12); }
-  38%  { opacity: 0.83; filter: brightness(0.97); }
-  45%  { opacity: 0.87; filter: brightness(1.01); }
-  52%  { opacity: 0.78; filter: brightness(0.90); }
-  55%  { opacity: 0.93; filter: brightness(1.10); }
-  58%  { opacity: 0.84; filter: brightness(0.98); }
-  65%  { opacity: 0.81; filter: brightness(0.94); }
-  70%  { opacity: 0.90; filter: brightness(1.06); }
-  75%  { opacity: 0.76; filter: brightness(0.87); }
-  78%  { opacity: 0.96; filter: brightness(1.15); }
-  82%  { opacity: 0.83; filter: brightness(0.95); }
-  88%  { opacity: 0.88; filter: brightness(1.03); }
-  93%  { opacity: 0.74; filter: brightness(0.86); }
-  96%  { opacity: 0.91; filter: brightness(1.09); }
-  100% { opacity: 0.85; filter: brightness(1.0); }
 }

@@ -1,6 +1,6 @@
 const VIDEOS = [
-  { src: "/assets/v/b.webm", x: 25, width: "21%" },
-  { src: "/assets/v/c.webm", x: 50, width: "21%" },
+  { src: "/assets/v/b.webm", x: 25, width: "20%" },
+  { src: "/assets/v/c.webm", x: 50, width: "20%" },
   { src: "/assets/v/d.webm", x: 75, width: "18%" },
 ];
 
@@ -19,7 +19,7 @@ export default function TiltedGridHeroDemo() {
           className="absolute object-contain"
           style={{
             left: `${v.x}%`,
-            top: "55%",
+            top: "50%",
             transform: "translate(-50%, -50%)",
             width: v.width,
             height: "auto",
