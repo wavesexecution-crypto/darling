@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="no-referrer" />
+    <title>tilted-grid-hero-standalone</title>
+  </head>
+  <body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Copy deterrence - disable right-click, drag, and text selection
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, false);
+      document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, false);
+      document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, false);
+      document.addEventListener('copy', function(e) { e.preventDefault(); return false; }, false);
+    </script>
+  </body>
+</html>
