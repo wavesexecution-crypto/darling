@@ -27,6 +27,7 @@ export default function TiltedGridHeroDemo() {
             willChange: "transform",
             backfaceVisibility: "hidden",
             background: "transparent",
+            mixBlendMode: "screen",
           }}
         />
       ))}

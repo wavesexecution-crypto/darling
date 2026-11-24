@@ -55,4 +55,6 @@ video {
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
+  mix-blend-mode: screen;
+  background: transparent;
 }
