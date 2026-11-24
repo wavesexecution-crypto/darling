@@ -26,6 +26,7 @@ export default function TiltedGridHeroDemo() {
             height: "auto",
             willChange: "transform",
             backfaceVisibility: "hidden",
+            background: "transparent",
           }}
         />
       ))}
