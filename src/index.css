@@ -17,7 +17,7 @@ body::before {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* Mobile: use the mobile-specific background image */
@@ -46,6 +46,14 @@ body::before {
     left: 35% !important;
     top: 50% !important;
     width: 75% !important;
+  }
+}
+
+/* Desktop: ensure hero content renders above the background logo */
+@media (min-width: 769px) {
+  .hero-container {
+    z-index: 1;
+    position: relative;
   }
 }
 
